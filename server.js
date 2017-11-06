@@ -1,8 +1,11 @@
-var express = require('express')
-
-var app = express()
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
 
 app.use(express.static('./public'))
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 
 app.get('/', function(request, response){
 	response.sendFile('./public/html/index.html', {root: './'})
@@ -31,7 +34,10 @@ app.get('/boulder', function(request, response){
 	console.log('went to Boulder')
 })
 
+app.post('/cargo-validator', function (req, res) {
+	var totals = req.body;
+	res.send('working')
+})
 
-app.listen(8080, function(){
-	console.log('This dude is working!')
+app.listen(8090, function(){
 })

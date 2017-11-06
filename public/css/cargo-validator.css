@@ -1,0 +1,16 @@
+#app {
+}
+
+.img-fluid {
+	height:auto;
+	width: 30vw;
+}
+.totals {
+	text-align: center;
+}
+.space {
+	height: 5rem;
+}
+.validate {
+	text-align: center;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<script src="https://unpkg.com/vue"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="/css/cargo-validator.css">
+	<script src="https://use.fontawesome.com/8f5e0c9388.js"></script>
+
+</head>
+<body>
+	<div id="app">
+    	<div class="container">
+        	<div class="row">
+        		<div class="coffee col-md-3">
+	          		<img src="https://seeklogo.com/images/S/Starbucks_Coffee-logo-D24A63ABDC-seeklogo.com.png" class="img-fluid">
+					<!-- <i class="fa fa-coffee" aria-hidden="true"></i> -->
+
+					<p>$50 1 lbs</p>
+	          		<button v-on:click='coffee += 1'>+</button>
+	          		<button v-on:click='coffee -= 1'>-</button>
+	          		<span>{{ coffee }}</span>
+	        	</div>
+	        	<div class="peanuts col-md-3">
+	          		<img src="http://www.thelogofactory.com/wp-content/uploads/2006/04/planters-mr-peanut-logo.png" class="img-fluid"/>
+
+					<button v-on:click='peanuts += 1'>+</button>
+	          		<button v-on:click='peanuts -= 1'>-</button>
+					<span>{{ peanuts }}</span>
+	        	</div>
+
+
+		        <div class="books col-md-3">
+		          	<img src="http://eloquentjavascript.net/img/cover.png" class="img-fluid" />
+		          	<button v-on:click='books += 1'>+</button>
+		          	<button v-on:click='books -= 1'>-</button>
+					<span>{{ books }}</span>
+		        </div>
+		        <div class="cds col-md-3">
+		          	<img src="https://images.genius.com/caa21aa786a004e41fcd9943eeba80db.600x600x1.jpg" class="img-fluid" />
+		          	<button v-on:click='cds += 1'>+</button>
+		          	<button v-on:click='cds -= 1'>-</button>
+					<span>{{ cds }}</span>
+	        	</div>
+				</div>
+		<div class='space'>
+		</div>
+		<div class="totals">
+			<span>{{ cost }}</span>
+			<span>{{ weight }}</span>
+		</div>
+		<div class='space'>
+		</div>
+		<div class="validate">
+			<button v-on:click="validate()">validate-cargo</button>
+			<span>{{ validate }}</span>
+		</div>
+    </div>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

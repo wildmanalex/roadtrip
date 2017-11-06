@@ -7,6 +7,9 @@ app.use(express.static('./public'))
 app.get('/', function(request, response){
 	response.sendFile('./public/html/index.html', {root: './'})
 })
+app.get('/cargo-validator', function(request, response){
+  response.sendFile('./public/html/cargo-validator.html', {root: './'})
+})
 app.get('/vancouver', function(request, response){
 	response.sendFile('./public/html/vancouver.html', {root: './'})
 	console.log('went to vancouver')

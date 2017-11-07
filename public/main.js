@@ -8,13 +8,14 @@ var app = new Vue ({
     cds:0,
 	totalcost:0,
 	totalweight:0,
-	finalmessage:''
+	finalmessage: ''
   },
   methods: {
-	  request: function () {
-		  $.post('/cargo-validator',{cost : this.totalcost, weight : this.totalweight}, function(response, request){
+	  request: function (response) {
+		  $.post('/cargo-validator',{cost : this.totalcost, weight : this.totalweight}, (response, request) => {
 			  console.log(response)
 			  this.finalmessage = response
+
 	  	  })
 	  }
   },

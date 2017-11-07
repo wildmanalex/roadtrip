@@ -13,17 +13,15 @@
 	<div id="app">
     	<div class="container">
         	<div class="row">
-        		<div class="coffee col-md-3">
-	          		<!-- <img src="https://seeklogo.com/images/S/Starbucks_Coffee-logo-D24A63ABDC-seeklogo.com.png" class="img-fluid"> -->
+        		<div class="coffee col-md-6">
+	          		<img src="/img/coffee.png" class="img-fluid rounded float-left">
 					<!-- <i class="fa fa-coffee" aria-hidden="true"></i> -->
-
-					<p>$50 1 lbs</p>
 	          		<button v-on:click='coffee += 1'>+</button>
 	          		<button v-on:click='coffee -= 1'>-</button>
 	          		<span>{{ coffee }}</span>
 	        	</div>
-	        	<div class="peanuts col-md-3">
-	          		<!-- <img src="http://www.thelogofactory.com/wp-content/uploads/2006/04/planters-mr-peanut-logo.png" class="img-fluid"/> -->
+	        	<div class="peanuts col-md-6">
+	          		<img src="/img/chik.png" class="img-fluid rounded float-left"/>
 
 					<button v-on:click='peanuts += 1'>+</button>
 	          		<button v-on:click='peanuts -= 1'>-</button>
@@ -31,14 +29,14 @@
 	        	</div>
 
 
-		        <div class="books col-md-3">
-		          	<!-- <img src="http://eloquentjavascript.net/img/cover.png" class="img-fluid" /> -->
+		        <div class="books col-md-6">
+		          	<img src="/img/books.png" class="img-fluid rounded float-left" />
 		          	<button v-on:click='books += 1'>+</button>
 		          	<button v-on:click='books -= 1'>-</button>
 					<span>{{ books }}</span>
 		        </div>
-		        <div class="cds col-md-3">
-		          	<!-- <img src="https://images.genius.com/caa21aa786a004e41fcd9943eeba80db.600x600x1.jpg" class="img-fluid" /> -->
+		        <div class="cds col-md-6">
+		          	<img src="/img/zep.jpg" class="img-fluid rounded float-left" />
 		          	<button v-on:click='cds += 1'>+</button>
 		          	<button v-on:click='cds -= 1'>-</button>
 					<span>{{ cds }}</span>
@@ -55,6 +53,8 @@
 		<div class="validate">
 			<button  v-on:click="request" v-bind:class="{isnotvalid : isValid}">validate-cargo</button>
 			<span>{{ validate }}</span>
+			<span>final {{ finalmessage }}</span>
+
 		</div>
     </div>
   </div>

@@ -7,13 +7,14 @@ var app = new Vue ({
 	isValid:false,
     cds:0,
 	totalcost:0,
-	totalweight:0
+	totalweight:0,
+	finalmessage:''
   },
   methods: {
-
 	  request: function () {
 		  $.post('/cargo-validator',{cost : this.totalcost, weight : this.totalweight}, function(response, request){
-		  console.log(response);
+			  console.log(response)
+			  this.finalmessage = response
 	  	  })
 	  }
   },
@@ -29,17 +30,18 @@ var app = new Vue ({
 		return weight;
 	},
 	validate: function () {
-  		if(this.cost > 200){
+  		if(this.cost > 200 && this.weight > 200){
 			this.isValid = true
-  			return ('Your cargo is too expensive')
+  			return ('Your cargo is too heavy and expensive')
   		}
 		else if (this.weight > 200) {
 			this.isValid = true
   			return ('Your cargo is too heavy')
   		}
-  		else {
-  			return ('You are good to go!')
-  		}
+		else if (this.cost > 200){
+			this.isValid = true
+			return('Your cargo is too expensive')
+		}
   	}
   }
 });

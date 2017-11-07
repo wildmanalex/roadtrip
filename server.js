@@ -34,16 +34,21 @@ app.get('/boulder', function(request, response){
 	console.log('went to Boulder')
 })
 
-app.post('/cargo-validator', function (request, response) {
-	console.log(request.body);
-	if (request.totalcost > 200) {
-		response.send(`You've spent too much money`)
+app.post('/cargo-validator', function(request, response) {
+	 console.log(request.body);
+	if (request.body.cost > 200 && request.body.cost > 200) {
+		response.send(`You've spent too much money and your cargo is too heavy`)
 	}
-	else if (request.totalweight > 200) {
+	else if (request.body.weight > 200) {
 		response.send(`You're cargo weighs too much`)
+	}
+	else if(request.body.cost > 200) {
+		response.send(`You're cargo is too expensive`)
+	}
+	else{
+		response.send(`Good to go!`)
 	}
 
 })
-
 app.listen(8090, function(){
 })

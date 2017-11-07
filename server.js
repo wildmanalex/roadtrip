@@ -34,9 +34,15 @@ app.get('/boulder', function(request, response){
 	console.log('went to Boulder')
 })
 
-app.post('/cargo-validator', function (req, res) {
-	var totals = req.body;
-	res.send('working')
+app.post('/cargo-validator', function (request, response) {
+	console.log(request.body);
+	if (request.totalcost > 200) {
+		response.send(`You've spent too much money`)
+	}
+	else if (request.totalweight > 200) {
+		response.send(`You're cargo weighs too much`)
+	}
+
 })
 
 app.listen(8090, function(){

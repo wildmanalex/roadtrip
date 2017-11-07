@@ -10,15 +10,16 @@ var app = new Vue ({
 	totalweight:0
   },
   methods: {
+
 	  request: function () {
-		  $.post('/cargo-validator', this.data, function(res){
-		  console.log(res);
+		  $.post('/cargo-validator',{cost : this.totalcost, weight : this.totalweight}, function(response, request){
+		  console.log(response);
 	  	  })
 	  }
   },
   computed: {
 	cost: function () {
-		 var cost = ((this.coffee * 3.75)+(this.peanuts * 10)+(this.books * 12.55)+(this.cds * 8.99))
+		 var cost = ((this.coffee * 100)+(this.peanuts * 10)+(this.books * 12.55)+(this.cds * 8.99))
 		 this.totalcost = cost
 		 return cost;
 	},
